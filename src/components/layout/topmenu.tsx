@@ -71,16 +71,18 @@ const TopMenu: React.FC<TopMenuProps> = ({ children }) => {
               >
                 <ImageIcon sx={{ fontSize: 40 }} />
               </IconButton>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
+              {isAuthenticated && ( // Visa länkarna endast om användaren är autentiserad}
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+              )}
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
