@@ -10,13 +10,13 @@ env:
 phases:
   pre_build:
     commands:
-      - echo Logging in to Docker Hub...
-      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+      - echo Logging in to Gitea Docker registry...
+      - docker login giteaserver.spacetechnology.net -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   build:
     commands:
       - echo Building the Docker image...
-      - docker build --build-arg VITE_USER_API_URL=$VITE_USER_API_URL --build-arg VITE_IMAGE_API_URL=$VITE_IMAGE_API_URL -t egsundqvist/imagebook-client:latest .
+      - docker build --build-arg VITE_USER_API_URL=$VITE_USER_API_URL --build-arg VITE_IMAGE_API_URL=$VITE_IMAGE_API_URL -t giteaserver.spacetechnology.net/egsundqvist/imagebook-client:latest .
   post_build:
     commands:
-      - echo Pushing the Docker image to Docker Hub...
-      - docker push egsundqvist/imagebook-client:latest
+      - echo Pushing the Docker image to Gitea Docker registry...
+      - docker push giteaserver.spacetechnology.net/egsundqvist/imagebook-client:latest
