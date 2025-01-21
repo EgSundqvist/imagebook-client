@@ -4,6 +4,9 @@ FROM node:18-alpine AS build
 # Ange arbetskatalog
 WORKDIR /app
 
+# Installera ca-certificates
+RUN apk --no-cache add ca-certificates
+
 # Kopiera package.json och package-lock.json
 COPY package.json package-lock.json ./
 
@@ -18,6 +21,9 @@ RUN npm run build
 
 # Använd en lättvikts Nginx-bild för att servera den byggda applikationen
 FROM nginx:alpine
+
+# Installera ca-certificates
+RUN apk --no-cache add ca-certificates
 
 # Kopiera byggresultatet från den tidigare steget
 COPY --from=build /app/dist /usr/share/nginx/html
