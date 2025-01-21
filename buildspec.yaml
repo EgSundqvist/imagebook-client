@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   parameter-store:
-    DOCKERHUB_USERNAME: "/dockerhub/username"
-    DOCKERHUB_PASSWORD: "/dockerhub/password"
+    DOCKER_USERNAME: "/dockerhub/username"
+    DOCKER_PASSWORD: "/dockerhub/password"
     VITE_USER_API_URL: "/imagebook-client/VITE_USER_API_URL"
     VITE_IMAGE_API_URL: "/imagebook-client/VITE_IMAGE_API_URL"
 
