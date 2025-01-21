@@ -6,7 +6,7 @@ import { ImageData } from '../types/image'; // Importera typen ImageData
 const API_URL = import.meta.env.VITE_IMAGE_API_URL; */
 
 const axiosInstance = axios.create({
-    baseURL: "http://eriksdemoapi.chickenkiller.com",
+    baseURL: "http://eriksdemo.chickenkiller.com",
     headers: {
         'Content-Type': 'application/json',
     },
