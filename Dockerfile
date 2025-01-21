@@ -16,6 +16,14 @@ RUN npm install
 # Kopiera resten av applikationen
 COPY . .
 
+# Ange byggargument
+ARG VITE_USER_API_URL
+ARG VITE_IMAGE_API_URL
+
+# Sätt miljövariabler baserat på byggargument
+ENV VITE_USER_API_URL=$VITE_USER_API_URL
+ENV VITE_IMAGE_API_URL=$VITE_IMAGE_API_URL
+
 # Bygg applikationen
 RUN npm run build
 
