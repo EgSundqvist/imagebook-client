@@ -2,11 +2,11 @@ import axios from 'axios';
 import { getToken } from '../utils/localstorage'; // Importera getToken
 import { ImageData } from '../types/image'; // Importera typen ImageData
 
-console.log('VITE_IMAGE_API_URL:', import.meta.env.VITE_IMAGE_API_URL);
-const API_URL = import.meta.env.VITE_IMAGE_API_URL || 'http://localhost:8080';
+/* console.log('VITE_IMAGE_API_URL:', import.meta.env.VITE_IMAGE_API_URL);
+const API_URL = import.meta.env.VITE_IMAGE_API_URL; */
 
 const axiosInstance = axios.create({
-    baseURL: API_URL,
+    baseURL: "http://eriksdemoapi.chickenkiller.com",
     headers: {
         'Content-Type': 'application/json',
     },
