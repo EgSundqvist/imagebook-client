@@ -5,10 +5,10 @@ import { Profile } from '../types/profile'; // Importera typen Profile
 
 
 console.log('VITE_USER_API_URL:', import.meta.env.VITE_USER_API_URL);
-/* const API_URL = import.meta.env.VITE_USER_API_URL; */
+const USER_API_URL = import.meta.env.VITE_USER_API_URL;
 
 const axiosInstance = axios.create({
-    baseURL: "https://userapi.spacetechnology.net",
+    baseURL: USER_API_URL,
     headers: {
         'Content-Type': 'application/json',
     },
