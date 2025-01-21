@@ -6,7 +6,7 @@ console.log('VITE_IMAGE_API_URL:', import.meta.env.VITE_IMAGE_API_URL);
 /* const API_URL = import.meta.env.VITE_IMAGE_API_URL; */
 
 const axiosInstance = axios.create({
-    baseURL: "https://imagebook.spacetechnology.net",
+    baseURL: "https://imageapi.spacetechnology.net",
     headers: {
         'Content-Type': 'application/json',
     },
