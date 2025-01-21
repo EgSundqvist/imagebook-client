@@ -4,11 +4,11 @@ import { User } from '../types/user'; // Importera typen User
 import { Profile } from '../types/profile'; // Importera typen Profile
 
 
-/* console.log('VITE_USER_API_URL:', import.meta.env.VITE_USER_API_URL);
-const API_URL = import.meta.env.VITE_USER_API_URL; */
+console.log('VITE_USER_API_URL:', import.meta.env.VITE_USER_API_URL);
+/* const API_URL = import.meta.env.VITE_USER_API_URL; */
 
 const axiosInstance = axios.create({
-    baseURL: "http://userapi.chickenkiller.com",
+    baseURL: "https://userapi.spacetechnology.net",
     headers: {
         'Content-Type': 'application/json',
     },
