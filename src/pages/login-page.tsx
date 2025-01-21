@@ -21,6 +21,7 @@ const LoginPage = () => {
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  console.log("Keel running...");
 
   return (
     <PageLayout title="Login">
