@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { getToken } from '../utils/localstorage'; // Importera getToken och removeToken
-import { User } from '../types/user'; // Importera typen User
-import { Profile } from '../types/profile'; // Importera typen Profile
+import { getToken } from '../utils/localstorage';
+import { User } from '../types/user';
+import { Profile } from '../types/profile';
 
 
 console.log('VITE_USER_API_URL:', import.meta.env.VITE_USER_API_URL);
@@ -14,7 +14,7 @@ const axiosInstance = axios.create({
     },
 });
 
-// Lägg till en interceptor för att inkludera JWT-token i Authorization-headern
+// interceptor för att inkludera JWT-token i Authorization-headern
 axiosInstance.interceptors.request.use((config) => {
     const token = getToken();
     if (token) {
@@ -24,10 +24,10 @@ axiosInstance.interceptors.request.use((config) => {
     return config;
 });
 
-// Lägg till en interceptor för att hantera svar och kontrollera tokenens giltighet
+
 axiosInstance.interceptors.response.use(
     (response) => {
-        console.log('Response:', response); // Logga response
+        console.log('Response:', response);
         return response;
     }
 
@@ -42,17 +42,17 @@ export const loginUser = (credentials: { email: string; password: string }) => {
 };
 
 export const fetchProfile = () => {
-    return axiosInstance.get<Profile>('/profiles/current-profile'); // Uppdatera endpoint
+    return axiosInstance.get<Profile>('/profiles/current-profile');
 };
 
 export const updateProfile = (profileData: Profile) => {
-    return axiosInstance.put<{ message: string; profile: Profile }>('/profiles/current-profile', profileData); // Uppdatera endpoint
+    return axiosInstance.put<{ message: string; profile: Profile }>('/profiles/current-profile', profileData);
 };
 
 export const fetchUserInfo = () => {
-    return axiosInstance.get<User>('/users/current_user'); // Lägg till endpoint för att hämta användarens information
+    return axiosInstance.get<User>('/users/current_user');
 };
 
 export const changePassword = (passwordData: { old_password: string; new_password: string }) => {
-    return axiosInstance.put('/users/change_password', passwordData); // Lägg till endpoint för att ändra lösenord
+    return axiosInstance.put('/users/change_password', passwordData);
 };

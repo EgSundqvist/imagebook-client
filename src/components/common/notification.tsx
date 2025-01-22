@@ -9,7 +9,7 @@ interface NotificationProps extends AlertProps {
     vertical: "top" | "bottom";
     horizontal: "left" | "center" | "right";
   };
-  message: string; // Lägg till message här
+  message: string;
 }
 
 const Notification: React.FC<NotificationProps> = ({
@@ -17,7 +17,7 @@ const Notification: React.FC<NotificationProps> = ({
   onClose,
   autoHideDuration = 6000,
   anchorOrigin = { vertical: "bottom", horizontal: "center" },
-  message, // Lägg till message här
+  message,
   ...alertProps
 }) => {
   return (
@@ -28,7 +28,7 @@ const Notification: React.FC<NotificationProps> = ({
       anchorOrigin={anchorOrigin}
     >
       <Alert onClose={onClose} {...alertProps}>
-        {message} {/* Lägg till message här */}
+        {message}
       </Alert>
     </Snackbar>
   );

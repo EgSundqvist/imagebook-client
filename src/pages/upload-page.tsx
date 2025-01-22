@@ -3,7 +3,7 @@ import ImageUpload from "../components/image/image-upload";
 import Notification from "../components/common/notification";
 import LoadingComponent from "../components/common/loading-spinner";
 import FormTextField from "../components/common/form-textfield";
-import { useImageUpload } from "../hooks/use-imageupload"; // Importera useImageUpload
+import { useImageUpload } from "../hooks/use-imageupload";
 import PageLayout from "../components/layout/page-layout";
 
 const UploadPage = () => {
@@ -20,7 +20,7 @@ const UploadPage = () => {
     handleSubmit,
     handleNotificationClose,
     isFormValid,
-  } = useImageUpload(); // Använd useImageUpload
+  } = useImageUpload();
 
   return (
     <PageLayout title="Upload Image">

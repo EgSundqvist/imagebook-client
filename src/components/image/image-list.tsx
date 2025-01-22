@@ -56,8 +56,8 @@ export function ImageList({ onImageCountChange }: ImageListProps) {
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center", // Centrera innehållet horisontellt
-        width: "100%", // Se till att Box tar upp hela bredden
+        alignItems: "center",
+        width: "100%",
       }}
     >
       {content}
@@ -69,7 +69,7 @@ export function ImageList({ onImageCountChange }: ImageListProps) {
             variant="h6"
             sx={{
               fontFamily: "'Shadows Into Light', cursive",
-              fontSize: isSmallScreen ? "32px" : "48px", // Justera fontSize baserat på skärmstorlek
+              fontSize: isSmallScreen ? "32px" : "48px",
               textAlign: "center",
               textDecoration: "underline",
             }}

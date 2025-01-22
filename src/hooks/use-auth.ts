@@ -21,7 +21,7 @@ export const useAuth = () => {
   const navigate = useNavigate();
   const { notificationOpen, notificationType, notificationMessage, showNotification, handleNotificationClose } = useNotification();
   const authState = useSelector((state: RootState) => state.auth);
-  const logoutTimerRef = useRef<NodeJS.Timeout | null>(null); // Lägg till logoutTimerRef
+  const logoutTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleLogin = async (email: string, password: string) => {
     try {
@@ -34,7 +34,7 @@ export const useAuth = () => {
         dispatch(setToken({ token: access_token, expiry: expiryTime }));
         dispatch(setUser(user));
         navigate('/home');
-        startLogoutTimer(expiryTime); // Starta logout-timer
+        startLogoutTimer(expiryTime);
         return response;
       }
     } catch (err) {
@@ -57,8 +57,8 @@ export const useAuth = () => {
     }
   };
 
-  const updateUserProfile = (profile: Profile) => { // Använd typen Profile
-    dispatch(setUser({ ...authState.user, profile } as User)); // Använd typen User
+  const updateUserProfile = (profile: Profile) => {
+    dispatch(setUser({ ...authState.user, profile } as User));
   };
 
   const startLogoutTimer = (expiryTime: number) => {
@@ -101,8 +101,8 @@ export const useAuth = () => {
     handleNotificationClose,
     handleLogin,
     handleLogout,
-    updateUserProfile, // Lägg till updateUserProfile
-    checkTokenValidityAndSetTimer: checkTokenValidityOnMount, // Lägg till checkTokenValidityAndSetTimer
+    updateUserProfile,
+    checkTokenValidityAndSetTimer: checkTokenValidityOnMount,
   };
 };
 

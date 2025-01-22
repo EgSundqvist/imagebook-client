@@ -16,7 +16,6 @@ RUN npm install
 # Kopiera resten av applikationen
 COPY . .
 
-# Ange byggargument
 ARG VITE_USER_API_URL
 ARG VITE_IMAGE_API_URL
 
@@ -27,7 +26,6 @@ ENV VITE_IMAGE_API_URL=$VITE_IMAGE_API_URL
 # Bygg applikationen
 RUN npm run build
 
-# Använd en lättvikts Nginx-bild för att servera den byggda applikationen
 FROM nginx:alpine
 
 # Installera ca-certificates

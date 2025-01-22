@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ImageIcon from "@mui/icons-material/Image";
 import { Link } from "react-router-dom";
 import Switch from "@mui/material/Switch";
-import { useTopMenu } from "../../hooks/use-topmenu"; // Importera useTopMenu
+import { useTopMenu } from "../../hooks/use-topmenu";
 
 const pages = [
   { name: "My images", path: "/home" },
@@ -43,7 +43,7 @@ const TopMenu: React.FC<TopMenuProps> = ({ children }) => {
     handleCloseUserMenu,
     handleThemeSwitch,
     handleMenuItemClick,
-  } = useTopMenu(); // Använd useTopMenu
+  } = useTopMenu();
 
   return (
     <>
@@ -71,7 +71,7 @@ const TopMenu: React.FC<TopMenuProps> = ({ children }) => {
               >
                 <ImageIcon sx={{ fontSize: 40 }} />
               </IconButton>
-              {isAuthenticated && ( // Visa länkarna endast om användaren är autentiserad}
+              {isAuthenticated && (
                 <IconButton
                   size="large"
                   aria-label="account of current user"
@@ -125,7 +125,7 @@ const TopMenu: React.FC<TopMenuProps> = ({ children }) => {
                 justifyContent: "left",
               }}
             >
-              {isAuthenticated && // Visa länkarna endast om användaren är autentiserad
+              {isAuthenticated &&
                 pages.map((page) => (
                   <Button
                     key={page.name}
@@ -148,7 +148,7 @@ const TopMenu: React.FC<TopMenuProps> = ({ children }) => {
                 onChange={handleThemeSwitch}
                 inputProps={{ "aria-label": "theme switch" }}
               />
-              {userProfile && ( // Visa tooltip-elementet endast om användaren är inloggad
+              {userProfile && (
                 <>
                   <Tooltip title="Open settings">
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -182,7 +182,7 @@ const TopMenu: React.FC<TopMenuProps> = ({ children }) => {
                         <Typography
                           sx={{
                             textAlign: "center",
-                          }} // Lägg till fontFamily
+                          }}
                         >
                           {setting.name}
                         </Typography>

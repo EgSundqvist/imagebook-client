@@ -5,13 +5,13 @@ import { User } from '../../types/user';
 interface AuthState {
   token: string | null;
   user: User | null;
-  tokenExpiry: number | null; // Lägg till tokenExpiry
+  tokenExpiry: number | null;
 }
 
 const initialState: AuthState = {
   token: getToken(),
   user: null,
-  tokenExpiry: null, // Initialisera tokenExpiry
+  tokenExpiry: null,
 };
 
 const authSlice = createSlice({

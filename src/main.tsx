@@ -14,8 +14,8 @@ import "@fontsource/roboto/700.css";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import store, { persistor } from "./redux/store";
-import Notification from "./components/common/notification"; // Importera Notification
-import { useNotification } from "./hooks/use-notifications"; // Importera useNotification
+import Notification from "./components/common/notification";
+import { useNotification } from "./hooks/use-notifications";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +25,7 @@ const App = () => {
     notificationType,
     notificationMessage,
     handleNotificationClose,
-  } = useNotification(); // Använd useNotification
+  } = useNotification();
 
   return (
     <>

@@ -4,8 +4,8 @@ import { useNotification } from "./use-notifications";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { setUser } from "../redux/slices/auth-slice";
-import { Profile } from "../types/profile"; // Importera typen Profile
-import { User } from "../types/user"; // Importera typen User
+import { Profile } from "../types/profile";
+import { User } from "../types/user";
 
 export const useProfileForm = () => {
     const [formData, setFormData] = useState<Profile>({
@@ -73,9 +73,9 @@ export const useProfileForm = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            console.log("Submitting form data:", formData); // Logga formData
+            console.log("Submitting form data:", formData);
             const response = await updateProfile(formData);
-            const updatedProfile: Profile = response.data.profile; // Uppdatera med rätt struktur
+            const updatedProfile: Profile = response.data.profile;
             showNotification("success", "Profile updated successfully");
             setInitialFormData(updatedProfile);
             setFormData(updatedProfile);
@@ -85,7 +85,7 @@ export const useProfileForm = () => {
                     ...authState.user,
                     profile: updatedProfile,
                 };
-                dispatch(setUser(updatedUser)); // Uppdatera Redux state
+                dispatch(setUser(updatedUser));
             }
         } catch (err) {
             showNotification("error", "Failed to update profile");

@@ -22,7 +22,7 @@ export const useLoginForm = () => {
     try {
       const response = await handleLogin(formData.email, formData.password);
       if (response && response.status === 200) {
-        console.log("Login successful:", response.data); // Logga "Login successful" och response.data
+        console.log("Login successful:", response.data);
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {

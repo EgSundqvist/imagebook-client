@@ -18,7 +18,7 @@ interface FormTextFieldProps {
   autoFocus?: boolean;
   sx?: object;
   value: string;
-  InputProps?: object; // Lägg till InputProps här
+  InputProps?: object;
 }
 
 const FormTextField: React.FC<FormTextFieldProps> = ({
@@ -38,7 +38,7 @@ const FormTextField: React.FC<FormTextFieldProps> = ({
   autoFocus = false,
   sx,
   value,
-  InputProps, // Lägg till InputProps här
+  InputProps,
 }) => {
   return (
     <TextField
@@ -56,7 +56,7 @@ const FormTextField: React.FC<FormTextFieldProps> = ({
       autoFocus={autoFocus}
       sx={sx}
       value={value}
-      InputProps={InputProps} // Lägg till InputProps här
+      InputProps={InputProps}
       slotProps={{
         inputLabel: {
           style: { color: error ? inputLabelColor : undefined },

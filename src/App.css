@@ -41,7 +41,7 @@
   color: #888;
 }
 
-/* Lägg till denna CSS-klass för den skissade ramen */
+
 .sketchy-border {
   border-radius: 8px;
   background: white;
@@ -51,7 +51,7 @@
   border-style: groove;
 }
 
-/* Media queries för att justera storleken på bilderna baserat på skärmens bredd */
+
 @media (max-width: 768px) {
   .sketchy-border {
     width: 100%;

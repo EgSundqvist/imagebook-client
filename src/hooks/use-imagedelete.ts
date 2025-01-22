@@ -3,7 +3,7 @@ import axios from "axios";
 import { getDeleteUrl, confirmDelete } from "../services/image-service";
 import { useNotification } from "./use-notifications";
 import { useNavigate } from "react-router-dom";
-import { ImageData } from "../types/image"; // Importera typen ImageData
+import { ImageData } from "../types/image";
 
 export const useImageDelete = (imageId: string) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -20,8 +20,8 @@ export const useImageDelete = (imageId: string) => {
     setLoading(true);
     try {
       const { data } = await getDeleteUrl(imageId);
-      console.log("Delete URL response:", data); // Logga API-svaret
-      const { PresignedURL } = data as Pick<ImageData, 'PresignedURL'>; // Använd rätt namn
+      console.log("Delete URL response:", data);
+      const { PresignedURL } = data as Pick<ImageData, 'PresignedURL'>;
       const deleteResponse = await axios.delete(PresignedURL);
 
       if (deleteResponse.status === 204) {

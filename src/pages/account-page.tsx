@@ -37,7 +37,7 @@ const AccountPage = () => {
         name="first_name"
         autoComplete="off"
         onChange={handleChange}
-        value={formData.first_name || ""} // Använd en fallback-tom sträng om värdet är undefined
+        value={formData.first_name || ""}
         InputProps={{
           disabled: true,
         }}
@@ -51,7 +51,7 @@ const AccountPage = () => {
         name="last_name"
         autoComplete="off"
         onChange={handleChange}
-        value={formData.last_name || ""} // Använd en fallback-tom sträng om värdet är undefined
+        value={formData.last_name || ""}
         InputProps={{
           disabled: true,
         }}
@@ -65,7 +65,7 @@ const AccountPage = () => {
         name="email"
         autoComplete="off"
         onChange={handleChange}
-        value={formData.email || ""} // Använd en fallback-tom sträng om värdet är undefined
+        value={formData.email || ""}
         InputProps={{
           disabled: true,
         }}
@@ -81,7 +81,7 @@ const AccountPage = () => {
           type="password"
           autoComplete="off"
           onChange={handleChange}
-          value={formData.old_password || ""} // Använd en fallback-tom sträng om värdet är undefined
+          value={formData.old_password || ""}
           size={isSmallScreen ? "small" : "medium"}
         />
         <FormTextField

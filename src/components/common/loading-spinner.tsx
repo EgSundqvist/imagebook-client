@@ -6,8 +6,8 @@ export default function LoadingComponent() {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "center", // Centrera horisontellt
-        alignItems: "center", // Centrera vertikalt
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <CircularProgress />

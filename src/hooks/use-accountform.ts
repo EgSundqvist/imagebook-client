@@ -3,9 +3,8 @@ import { fetchUserInfo, changePassword } from "../services/user-profile-service"
 import { useNotification } from "./use-notifications";
 import axios from "axios";
 import { usePasswordValidation } from "./use-password-validation";
-import { User } from "../types/user"; // Importera typen User
+import { User } from "../types/user";
 
-// Definiera en typ för formulärdata som inkluderar old_password
 interface AccountFormData extends Partial<User> {
     old_password?: string;
 }
@@ -72,7 +71,7 @@ export const useAccountForm = () => {
         setLoading(true);
         try {
             await changePassword({
-                old_password: formData.old_password || "", // Använd en fallback-tom sträng om old_password är undefined
+                old_password: formData.old_password || "",
                 new_password: password,
             });
             showNotification("success", "Password updated successfully");

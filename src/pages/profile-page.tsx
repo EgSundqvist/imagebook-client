@@ -37,7 +37,7 @@ const ProfilePage = () => {
       </Typography>
       <AvatarSelector
         avatars={avatars}
-        selectedAvatar={formData.avatar || ""} // Använd en fallback-tom sträng om värdet är undefined
+        selectedAvatar={formData.avatar || ""}
         onAvatarClick={handleAvatarClick}
         avatarSize={avatarSize}
         avatarMargin={avatarMargin}
@@ -52,7 +52,7 @@ const ProfilePage = () => {
         autoComplete="off"
         size={isSmallScreen ? "small" : "medium"}
         onChange={handleChange}
-        value={formData.username || ""} // Använd en fallback-tom sträng om värdet är undefined
+        value={formData.username || ""}
         sx={{ mt: 3 }}
       />
       <FormTextField
@@ -64,7 +64,7 @@ const ProfilePage = () => {
         autoComplete="off"
         size={isSmallScreen ? "small" : "medium"}
         onChange={handleChange}
-        value={formData.bio || ""} // Använd en fallback-tom sträng om värdet är undefined
+        value={formData.bio || ""}
         sx={{ mt: 3 }}
       />
       <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>

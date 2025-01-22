@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 import Notification from "../common/notification";
-import { useImageDelete } from "../../hooks/use-imagedelete"; // Importera useImageDelete
+import { useImageDelete } from "../../hooks/use-imagedelete";
 
 interface ImageDeleteButtonProps {
   imageId: string;
@@ -15,7 +15,7 @@ const ImageDeleteButton: React.FC<ImageDeleteButtonProps> = ({ imageId }) => {
     notificationMessage,
     handleDelete,
     handleNotificationClose,
-  } = useImageDelete(imageId); // Använd useImageDelete
+  } = useImageDelete(imageId);
 
   return (
     <>

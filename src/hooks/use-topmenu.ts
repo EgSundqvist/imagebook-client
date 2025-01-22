@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useAuth } from "./use-auth";
 import { Profile } from "../types/profile";
-import { useAuthContext } from "../contexts/auth-context"; // Importera useAuthContext
+import { useAuthContext } from "../contexts/auth-context";
 
 export const useTopMenu = () => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -14,7 +14,7 @@ export const useTopMenu = () => {
     const navigate = useNavigate();
     const userProfile = useSelector((state: RootState) => state.auth.user?.profile) as Profile;
     const { handleLogout } = useAuth();
-    const { isAuthenticated } = useAuthContext(); // Använd useAuthContext
+    const { isAuthenticated } = useAuthContext();
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -38,7 +38,7 @@ export const useTopMenu = () => {
 
     const handleMenuItemClick = (path: string) => {
         if (path === "/login") {
-            handleLogout(); // Anropa handleLogout vid utloggning
+            handleLogout();
         } else {
             navigate(path);
         }
@@ -56,6 +56,6 @@ export const useTopMenu = () => {
         handleCloseUserMenu,
         handleThemeSwitch,
         handleMenuItemClick,
-        isAuthenticated, // Returnera isAuthenticated
+        isAuthenticated,
     };
 };

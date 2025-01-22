@@ -4,7 +4,7 @@ import { useNotification } from "./use-notifications";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { usePasswordValidation } from "./use-password-validation";
-import { Profile } from "../types/profile"; // Importera typen Profile
+import { Profile } from "../types/profile";
 
 const avatars = ["owl.jpg", "deer.jpg", "wolf.jpg", "rabbit.jpg", "lynx.jpg"];
 
@@ -73,7 +73,6 @@ export const useRegisterForm = () => {
       if (response.status === 201) {
         console.log("Registration successful:", response.data);
         showNotification("success", "User and profile created successfully");
-        // Nollställ formuläret
         setFormData({
           firstName: "",
           lastName: "",
@@ -83,10 +82,9 @@ export const useRegisterForm = () => {
           avatar: avatars[0],
         });
         resetPasswords();
-        // Visa notifikationen en kort stund och navigera sedan till inloggningssidan
         setTimeout(() => {
           navigate("/login");
-        }, 3000); // Vänta 3 sekunder innan navigering
+        }, 3000);
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {
