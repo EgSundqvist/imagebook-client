@@ -6,17 +6,18 @@ env:
     DOCKER_PASSWORD: "/dockerhub/password"
     VITE_USER_API_URL: "/imagebook-client/VITE_USER_API_URL"
     VITE_IMAGE_API_URL: "/imagebook-client/VITE_IMAGE_API_URL"
+    DOCKER_REGISTRY_URL: "/dockerhub/url"
 
 phases:
   pre_build:
     commands:
       - echo Logging in to Gitea Docker registry...
-      - docker login giteaserver.spacetechnology.net -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - docker login $DOCKER_REGISTRY_URL -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   build:
     commands:
       - echo Building the Docker image...
-      - docker build --build-arg VITE_USER_API_URL=$VITE_USER_API_URL --build-arg VITE_IMAGE_API_URL=$VITE_IMAGE_API_URL -t giteaserver.spacetechnology.net/egsundqvist/imagebook-client:latest .
+      - docker build --build-arg VITE_USER_API_URL=$VITE_USER_API_URL --build-arg VITE_IMAGE_API_URL=$VITE_IMAGE_API_URL -t $DOCKER_REGISTRY_URL/egsundqvist/imagebook-client:latest .
   post_build:
     commands:
       - echo Pushing the Docker image to Gitea Docker registry...
-      - docker push giteaserver.spacetechnology.net/egsundqvist/imagebook-client:latest
+      - docker push $DOCKER_REGISTRY_URL/egsundqvist/imagebook-client:latest
