@@ -4,12 +4,12 @@ import { ImageData } from "../../types/image";
 import { useEffect } from "react";
 import LoadingComponent from "../common/loading-spinner";
 import LoadingComponentLine from "../common/loading-line";
-import { useImageList } from "../../hooks/use-imagelist"; // Importera useImageList
+import { useImageList } from "../../hooks/use-imagelist";
 import { Typography, Box, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 interface ImageListProps {
-  onImageCountChange: (count: number) => void; // Lägg till en prop för att skicka tillbaka antalet bilder
+  onImageCountChange: (count: number) => void;
 }
 
 export function ImageList({ onImageCountChange }: ImageListProps) {
@@ -21,13 +21,13 @@ export function ImageList({ onImageCountChange }: ImageListProps) {
     fetchNextPage,
     isFetchingNextPage,
     hasNextPage,
-  } = useImageList(); // Använd useImageList
+  } = useImageList();
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
-    onImageCountChange(images.length); // Skicka tillbaka antalet bilder
+    onImageCountChange(images.length);
   }, [images.length, onImageCountChange]);
 
   const content = images.map((image: ImageData, index: number) => {

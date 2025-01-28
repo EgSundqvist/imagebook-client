@@ -5,10 +5,10 @@ import { loginUser } from '../services/user-profile-service';
 import { useNotification } from './use-notifications';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { User } from '../types/user'; // Importera typerna User och Profile
-import { Profile } from '../types/profile'; // Importera typerna User och Profile
-import { jwtDecode } from 'jwt-decode'; // Importera jwt-decode
-import { useEffect, useRef } from 'react'; // Importera useRef
+import { User } from '../types/user';
+import { Profile } from '../types/profile';
+import { jwtDecode } from 'jwt-decode';
+import { useEffect, useRef } from 'react';
 
 
 

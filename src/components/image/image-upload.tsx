@@ -3,7 +3,7 @@ import { Box, Typography, IconButton } from "@mui/material";
 import { useDropzone } from "react-dropzone";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles";
-import { useImageUpload } from "../../hooks/use-imageupload"; // Importera useImageUpload
+import { useImageUpload } from "../../hooks/use-imageupload";
 
 interface ImageUploadProps {
   onFileSelected: (file: File | null) => void;
@@ -20,7 +20,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     handleFileSelected,
     handleClear,
     selectedFile: internalSelectedFile,
-  } = useImageUpload(); // Använd useImageUpload
+  } = useImageUpload();
 
   const theme = useTheme();
 
